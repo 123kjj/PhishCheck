@@ -22,6 +22,8 @@ The navigation uses friendly names, each with a plain caption underneath so it's
 
 - **Fish or Phish? (Check a message)** – Paste an email or text and PhishCheck points out common warning signs: urgent language, threats, requests for passwords or personal info, suspicious or lookalike links, link shorteners, and senders that don't match who they claim to be. It explains *why* each sign matters and gives an overall level (few / some / high number of warning signs). It never says a message is definitely a scam.
 - **Don't Get Hooked (Challenge)** – 10 realistic emails and texts, shuffled each time. 6 are phishing and 4 are legitimate, so you can't just say "suspicious" to everything. You can hover over (or tap) links to see where they really go, just like checking a real link. After each answer you get an explanation.
+- **Home** – Besides the intro, it explains why PhishCheck exists with real statistics (FBI Internet Crime Report 2025 and Verizon's 2025 Data Breach Investigations Report, linked on the page and kept in `src/data/facts.js`), a chart of who reports internet crime by age, and who the app can help: students, teachers, parents and grandparents, and anyone new to being online.
+- **Contact** – A contact form with validation. There's no server, so sending it opens the visitor's email app with the message filled in, addressed to the email set in `src/pages/Contact.jsx`. It also lists official places to report real phishing (reportphishing@apwg.org, texts to 7726, ReportFraud.ftc.gov).
 - **Your Reef (Progress)** – A small reef grows as you practice: one coral per completed challenge, one fish per 5 correct answers, one shell per 3 correct answers in a row, and bubbles while you're on a streak. It also tracks challenges completed, correct answers, accuracy, current streak, and three skill areas (link, sender, and urgency awareness). Everything is saved in your browser with localStorage and can be reset.
 
 ## How the analyzer works
@@ -55,14 +57,15 @@ src/
   App.jsx               page switching + progress state
   components/           Header, Footer, Logo, MessageCard, LinkPreview, ProgressBar,
                         Ocean (fish, bubbles, seaweed, waves), Reef
-  pages/                Home, CheckMessage, Challenge, Progress
+  pages/                Home, CheckMessage, Challenge, Progress, Contact
   data/scenarios.js     the 10 challenge messages and explanations
   data/samples.js       example messages for the analyzer
+  data/facts.js         statistics and sources shown on the home page
   lib/analyzer.js       rule-based warning sign detection
   lib/progress.js       localStorage save/load and stat updates
   lib/reef.js           rules for what the reef shows
   lib/scoring.js        answer checking and end-of-challenge messages
-  lib/useHashRoute.js   tiny hash router (#/check, #/challenge, #/progress)
+  lib/useHashRoute.js   tiny hash router (#/check, #/challenge, #/progress, #/contact)
 ```
 
 Built with React + Vite and plain CSS. No backend, no accounts, no API keys.

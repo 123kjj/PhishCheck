@@ -313,7 +313,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: var(--radius-sm);
   color: var(--text);
   text-decoration: none;
@@ -2166,6 +2166,279 @@ a {
   }
 }
 
+
+/* ---------- Home: why + who ---------- */
+.why-lead {
+  color: var(--fg-muted);
+  max-width: 46em;
+  margin-bottom: 18px;
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.fact-value {
+  font-size: 1.9rem;
+  font-weight: 750;
+  line-height: 1.1;
+  color: var(--dark-teal);
+  letter-spacing: -0.01em;
+}
+
+.fact-label {
+  margin-top: 8px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.fact-detail {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--warn);
+}
+
+.age-chart {
+  margin: 16px 0 0;
+}
+
+.age-chart figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-bottom: 14px;
+}
+
+.age-chart-title {
+  font-weight: 650;
+}
+
+.age-chart-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.age-bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.age-bars li {
+  display: grid;
+  grid-template-columns: 72px 1fr 68px;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+}
+
+.age-label {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.age-track {
+  height: 14px;
+  background: var(--surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.age-fill {
+  display: block;
+  height: 100%;
+  background: var(--dark-teal);
+  border-radius: 4px;
+}
+
+.age-fill.young {
+  background: var(--coral);
+}
+
+.age-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.age-note {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.sources {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+
+.sources a {
+  color: var(--fg-accent);
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.who-card {
+  border-top: 3px solid var(--seafoam);
+}
+
+.who-card h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+.who-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.contact-form {
+  position: relative;
+  margin-top: 30px;
+}
+
+.contact-mascot {
+  position: absolute;
+  right: 22px;
+  top: -32px;
+  z-index: -1;
+}
+
+.contact-side {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.field + .field {
+  margin-top: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 5px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fdfdfb;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+  border-color: var(--accent);
+}
+
+.field [aria-invalid='true'] {
+  border-color: var(--bad);
+}
+
+.field-error {
+  color: var(--bad);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.sent-note {
+  margin-top: 16px;
+  background: var(--good-bg);
+  border: 1px solid var(--good-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.92rem;
+}
+
+.side-title {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+.side-text {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.side-text.small {
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.contact-email {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.btn-small {
+  margin-top: 12px;
+  padding: 7px 14px;
+  font-size: 0.88rem;
+}
+
+.report-card {
+  border-top: 3px solid var(--coral);
+}
+
+.report-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 0.92rem;
+}
+
+.report-list li + li {
+  margin-top: 6px;
+}
+
+.footer-link {
+  color: #fff;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .hero {
@@ -2185,8 +2458,16 @@ a {
   .sign-grid {
     grid-template-columns: 1fr;
   }
-  .stat-grid {
+  .stat-grid,
+  .fact-grid,
+  .who-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-side {
+    margin-top: 0;
   }
 }
 
@@ -2215,11 +2496,27 @@ a {
   .nav::-webkit-scrollbar {
     display: none;
   }
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    overflow: visible;
+  }
   .nav-link {
-    flex: 1 0 auto;
-    padding: 6px 3px 8px;
+    justify-content: flex-start;
+    min-width: 0;
+    padding: 6px 2px 8px;
     border-radius: 0;
     border-bottom: 2px solid transparent;
+    white-space: normal;
+    text-align: center;
+  }
+  .nav-label {
+    line-height: 1.15;
+  }
+  .nav-caption {
+    margin-top: 2px;
+    line-height: 1.15;
   }
   .nav-label {
     font-size: 0.78rem;
@@ -2247,6 +2544,14 @@ a {
   }
   .results-mascot {
     display: none;
+  }
+  .fact-grid,
+  .who-grid {
+    grid-template-columns: 1fr;
+  }
+  .age-bars li {
+    grid-template-columns: 66px 1fr 58px;
+    gap: 8px;
   }
   .hero-example {
     margin-top: 48px;

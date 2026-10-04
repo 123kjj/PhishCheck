@@ -6,7 +6,12 @@ export default function Footer() {
           <strong>PhishCheck</strong> · Don’t get hooked. · Built for the Future Innovators
           Hackathon
         </span>
-        <span>No accounts, no tracking. Your progress stays in your browser.</span>
+        <span>
+          No accounts, no tracking. Your progress stays in your browser. ·{' '}
+          <a href="#/contact" className="footer-link">
+            Contact us
+          </a>
+        </span>
       </div>
     </footer>
   )

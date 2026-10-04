@@ -7,6 +7,7 @@ export const NAV_LINKS = [
   { route: 'check', label: 'Fish or Phish?', caption: 'Check a message' },
   { route: 'challenge', label: 'Don’t Get Hooked', caption: 'Challenge' },
   { route: 'progress', label: 'Your Reef', caption: 'Progress' },
+  { route: 'contact', label: 'Contact', caption: 'Get in touch' },
 ]
 
 export default function Header({ route }) {

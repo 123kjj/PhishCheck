@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const ROUTES = ['home', 'check', 'challenge', 'progress']
+const ROUTES = ['home', 'check', 'challenge', 'progress', 'contact']
 
 function readHash() {
   const name = window.location.hash.replace(/^#\/?/, '')

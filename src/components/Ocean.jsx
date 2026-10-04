@@ -540,8 +540,8 @@ export function OceanScene() {
 const BAND_LANES = [
   { kind: 'school', top: '7%', dir: 'left', dur: 110, delay: -40, layer: 'far', color: '#16707c', size: 96, park: '48%' },
   { kind: 'silhouette', top: '34%', dir: 'right', dur: 70, delay: -12, layer: 'far', color: '#16707c', size: 30, park: '8%', hideStill: true },
-  { kind: 'silhouette', top: '66%', dir: 'left', dur: 82, delay: -55, layer: 'far', color: '#16707c', size: 24, park: '52%', hideStill: true },
-  { kind: 'fish', top: '22%', dir: 'right', dur: 46, delay: -20, layer: 'mid', color: 'var(--coral)', stripe: '#fff1e2', size: 36, park: '30%' },
+  { kind: 'silhouette', top: '75%', dir: 'left', dur: 82, delay: -55, layer: 'far', color: '#16707c', size: 24, park: '52%', hideStill: true },
+  { kind: 'fish', top: '10%', dir: 'right', dur: 46, delay: -20, layer: 'mid', color: 'var(--coral)', stripe: '#fff1e2', size: 36, park: '30%' },
   { kind: 'fish', top: '47%', dir: 'left', dur: 38, delay: -5, layer: 'mid', color: 'var(--sun)', stripe: '#ff9f6b', size: 30, park: '88%' },
   { kind: 'school', top: '57%', dir: 'right', dur: 55, delay: -40, layer: 'mid', color: 'var(--seafoam)', size: 84, park: '60%', hideStill: true },
   { kind: 'fish', bottom: '22px', dir: 'left', dur: 32, delay: -12, layer: 'near', color: 'var(--bright-teal)', stripe: '#d4fff8', size: 72, park: '78%' },

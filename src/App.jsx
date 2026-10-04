@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import CheckMessage from './pages/CheckMessage.jsx'
 import Challenge from './pages/Challenge.jsx'
 import Progress from './pages/Progress.jsx'
+import Contact from './pages/Contact.jsx'
 import { useHashRoute } from './lib/useHashRoute.js'
 import {
   loadProgress,
@@ -17,7 +18,7 @@ import {
 } from './lib/progress.js'
 
 // Each page sits a little deeper in the ocean than the one before it
-const ZONES = { home: 'surface', check: 'shallow', challenge: 'mid', progress: 'deep' }
+const ZONES = { home: 'surface', check: 'shallow', challenge: 'mid', progress: 'deep', contact: 'shallow' }
 
 export default function App() {
   const route = useHashRoute()
@@ -57,6 +58,9 @@ export default function App() {
       break
     case 'progress':
       page = <Progress progress={progress} onReset={resetProgress} />
+      break
+    case 'contact':
+      page = <Contact />
       break
     default:
       page = <Home />
