@@ -3,10 +3,6 @@ import { OceanScene, DeepScene, CursorFish, Pufferfish, Mascot, Waves } from '..
 
 const SIGNS = [
   {
-    title: 'Suspicious links',
-    text: 'Check where a link actually leads before clicking.',
-  },
-  {
     title: 'Urgent language',
     text: 'Messages that pressure you to act immediately deserve a closer look.',
   },
@@ -56,21 +52,18 @@ export default function Home() {
             </svg>
             <div className="example-label">Example text message</div>
             <div className="example-bubble">
-              Your school account will be locked. Verify at{' '}
+              Your school account will be locked{' '}
               <mark className="mark">
-                <span className="mark-num">1</span>schoo1-login.info
-              </mark>{' '}
+                <span className="mark-num">1</span>within 24 hours
+              </mark>
+              . To keep access, reply with{' '}
               <mark className="mark">
-                <span className="mark-num">2</span>within 24 hours
-              </mark>{' '}
-              by{' '}
-              <mark className="mark">
-                <span className="mark-num">3</span>entering your password
+                <span className="mark-num">2</span>your password
               </mark>
               .
             </div>
             <figcaption className="example-caption">
-              Looks harmless at first. It has three warning signs.
+              Looks harmless at first. It has two warning signs.
             </figcaption>
             {/* the PhishCheck fish peeks out from behind the card, eyeing the message */}
             <Mascot className="peek-hero" mood="curious" look="down" size={58} flip />

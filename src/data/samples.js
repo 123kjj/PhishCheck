@@ -19,7 +19,10 @@ PayPal Security Team`,
   },
   {
     label: 'Delivery text',
-    text: `USPS: Your package is on hold due to an unpaid shipping fee of $1.99. Pay within 12 hours to avoid return: usps-redelivery-help.top/pay`,
+    text: `From: USPS Delivery <alerts@usps-redelivery-help.top>
+Subject: Your package is on hold
+
+USPS: Your package is on hold due to an unpaid shipping fee of $1.99. Pay within 12 hours to avoid return: usps-redelivery-help.top/pay`,
   },
   {
     label: 'Normal club email',
