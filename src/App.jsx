@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import { PageFish, Seabed } from './components/Ocean.jsx'
 import Home from './pages/Home.jsx'
 import CheckMessage from './pages/CheckMessage.jsx'
 import Challenge from './pages/Challenge.jsx'
@@ -14,6 +15,9 @@ import {
   applyAnswer,
   applyCompletion,
 } from './lib/progress.js'
+
+// Each page sits a little deeper in the ocean than the one before it
+const ZONES = { home: 'surface', check: 'shallow', challenge: 'mid', progress: 'deep' }
 
 export default function App() {
   const route = useHashRoute()
@@ -58,12 +62,16 @@ export default function App() {
       page = <Home />
   }
 
+  const zone = ZONES[route] || 'surface'
+
   return (
-    <div className="app">
+    <div className={`app zone-${zone}`}>
       <Header route={route} />
       <main className={`main${route === 'home' ? ' main-home' : ''}`} id="main">
-        {page}
+        {zone !== 'surface' && <PageFish zone={zone} />}
+        <div className="main-content">{page}</div>
       </main>
+      <Seabed zone={zone} />
       <Footer />
     </div>
   )

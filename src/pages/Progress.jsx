@@ -35,7 +35,7 @@ export default function Progress({ progress, onReset }) {
         <p>Your challenge results, saved in this browser. Your reef grows as you practice.</p>
       </header>
 
-      <section className="card reef-card">
+      <section className="card reef-card on-deep">
         <Reef reef={reef} />
         {reef.isEmpty ? (
           <div className="reef-empty">

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import MessageCard from '../components/MessageCard.jsx'
 import { SCENARIOS } from '../data/scenarios.js'
 import { scoreMessage, isCorrectChoice } from '../lib/scoring.js'
+import { Mascot, BubbleBurst, CatchMoment } from '../components/Ocean.jsx'
 
 function shuffle(list) {
   const arr = [...list]
@@ -99,7 +100,10 @@ export default function Challenge({ session, setSession, onAnswer, onComplete })
 
       {!answer ? (
         <div className="question">
-          <h2>Would you trust this message?</h2>
+          <div className="question-head">
+            <Mascot mood="curious" look="up" size={46} />
+            <h2>Would you trust this message?</h2>
+          </div>
           <div className="choice-row">
             <button type="button" className="btn btn-choice" onClick={() => choose('safe')}>
               Looks Safe
@@ -123,10 +127,21 @@ function Feedback({ scenario, answer, isLast, onNext }) {
   }, [])
 
   const phishing = scenario.answer === 'phishing'
+  const caught = answer.correct && phishing
   return (
-    <div className={`feedback ${answer.correct ? 'feedback-right' : 'feedback-wrong'}`} aria-live="polite">
-      <div className="feedback-verdict">
-        {answer.correct ? 'Correct!' : 'Not quite. Here’s what you might have missed.'}
+    <div
+      className={`feedback ${answer.correct ? 'feedback-right' : 'feedback-wrong'}${caught ? ' feedback-caught' : ''}`}
+      aria-live="polite"
+    >
+      {caught && <CatchMoment />}
+      <div className="feedback-head">
+        <span className="feedback-mascot">
+          <Mascot mood={answer.correct ? 'happy' : 'oops'} look="down" size={46} />
+          {answer.correct && <BubbleBurst />}
+        </span>
+        <div className="feedback-verdict">
+          {answer.correct ? 'Correct!' : 'Not quite. Here’s what you might have missed.'}
+        </div>
       </div>
       <p className="feedback-sub">
         {phishing ? 'This one is a phishing message.' : 'This one is a real, legitimate message.'}
@@ -186,6 +201,7 @@ function Results({ session, onRestart }) {
         <h1>Challenge Complete</h1>
       </header>
       <div className="card results-card">
+        <Mascot className="results-mascot" mood="happy" size={54} flip />
         <div className="score">
           Score: {score} / {total}
         </div>

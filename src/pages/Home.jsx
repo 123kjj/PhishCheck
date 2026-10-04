@@ -1,4 +1,5 @@
-import { OceanScene, Waves } from '../components/Ocean.jsx'
+import { useRef } from 'react'
+import { OceanScene, DeepScene, CursorFish, Pufferfish, Mascot, Waves } from '../components/Ocean.jsx'
 
 const SIGNS = [
   {
@@ -16,6 +17,7 @@ const SIGNS = [
 ]
 
 export default function Home() {
+  const bandRef = useRef(null)
   return (
     <>
       <section className="hero-band">
@@ -70,14 +72,22 @@ export default function Home() {
             <figcaption className="example-caption">
               Looks harmless at first. It has three warning signs.
             </figcaption>
+            {/* the PhishCheck fish peeks out from behind the card, eyeing the message */}
+            <Mascot className="peek-hero" mood="curious" look="down" size={58} flip />
           </figure>
         </div>
         <Waves />
       </section>
 
-      <div className="container">
-        <section className="section">
+      <div className="deep-band on-deep" ref={bandRef}>
+        <DeepScene />
+        <CursorFish areaRef={bandRef} />
+        <div className="container deep-band-content">
+        <section className="section look-section">
           <h2 className="section-title">What should you look for?</h2>
+          <span className="puffer-spot" data-ocean aria-hidden="true">
+            <Pufferfish size={54} flip className="puffer-live" />
+          </span>
           <div className="sign-grid">
             {SIGNS.map((sign, i) => (
               <div key={sign.title} className="card sign-card">
@@ -103,6 +113,7 @@ export default function Home() {
             <span className="how-text">Track your progress and watch a small reef grow.</span>
           </a>
         </section>
+        </div>
       </div>
     </>
   )

@@ -12,7 +12,9 @@ Students use email, texts, and online accounts every day, but phishing messages 
 
 ## Design
 
-The look plays on the "phish" pun with a calm, light underwater theme: soft blues and teal, white cards, a few slow-swimming fish, rising bubbles, swaying seaweed and gentle waves. All motion is lightweight CSS/SVG (no images or GIFs) and turns off completely for people who have "reduce motion" enabled. The security content itself stays plain and professional, and wrong answers get "Not quite. Here's what you might have missed." instead of anything that makes people feel bad.
+The look plays on the "phish" pun with an underwater world that gets deeper as you move through the app: Home starts at the bright surface and drops into deep water, Fish or Phish? is shallow, Don't Get Hooked is mid-water, and Your Reef is the deepest. Deep ocean colors (Midnight Ocean #031F2B, Deep Navy #042F3E, Deep Ocean #073B4C, Dark Teal #075E68) sit behind the colorful coral and fish, while everything you read or click stays on light cards. Text on dark water meets WCAG AA contrast.
+
+The sea life is hand-drawn SVG: round tropical fish, schools, a pufferfish that puffs up when you hover it, distant silhouettes, starfish, crabs, a treasure chest, and the little coral-colored PhishCheck fish who appears on every page and reacts to what you do. Correctly spotting a phishing message drops a hook with a tiny envelope "phish" on it. All motion is lightweight CSS/SVG (no images or GIFs) and turns off completely for people who have "reduce motion" enabled. The security content itself stays plain and professional, and wrong answers get "Not quite. Here's what you might have missed." instead of anything that makes people feel bad.
 
 ## What it does
 

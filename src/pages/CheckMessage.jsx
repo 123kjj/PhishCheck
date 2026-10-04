@@ -1,16 +1,22 @@
 import { useState } from 'react'
 import { analyzeMessage, RESULT_LEVELS } from '../lib/analyzer.js'
 import { SAMPLES } from '../data/samples.js'
+import { Mascot, BubbleBurst } from '../components/Ocean.jsx'
+
+// How the fish reacts to the result (purely decorative)
+const RESULT_MOOD = { high: 'worried', some: 'curious', few: 'happy' }
 
 export default function CheckMessage() {
   const [text, setText] = useState('')
   const [result, setResult] = useState(null)
   const [stale, setStale] = useState(false)
+  const [runs, setRuns] = useState(0) // only used to replay the bubble animation
 
   const analyze = () => {
     if (!text.trim()) return
     setResult(analyzeMessage(text))
     setStale(false)
+    setRuns((n) => n + 1)
   }
 
   const onChange = (e) => {
@@ -41,7 +47,16 @@ export default function CheckMessage() {
         </p>
       </header>
 
-      <div className="card">
+      <div className="card analyzer-card">
+        <div className="analyzer-mascot">
+          <Mascot
+            mood={result && !stale ? RESULT_MOOD[result.level] : text.trim() ? 'curious' : 'idle'}
+            look={result && !stale ? 'ahead' : 'down'}
+            size={60}
+            flip
+          />
+          {runs > 0 && <BubbleBurst key={runs} />}
+        </div>
         <div className="sample-row">
           <span className="sample-label">Try an example:</span>
           {SAMPLES.map((s) => (
